@@ -249,3 +249,8 @@ header .r button:last-child:hover{
 		font-size: 13px;
 	}
 }
+.ar{
+	/* float: right; */
+	text-align: right;
+	flex-direction: row-reverse;
+}
