@@ -1,0 +1,62 @@
+:root{
+	--BC: #F4F4EB;
+}
+*{
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+	margin: 0;
+}
+body{
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--BC);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form{
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	background-color: #fff;
+	border-radius: 20px;
+	justify-content: center;
+}
+.form h1{
+	font-family: "Rochester";
+	text-align: center;
+	color: #FF7700;
+}
+.form form{
+	display: flex;
+	flex-direction: column;
+	padding: 15px;
+	background-color: #fff;
+	border-radius: 20px;
+	gap: 10px;
+}
+input{
+	font-size: 20px;
+	border: none;
+	border-bottom: 1.5px solid #FF7700;
+	user-select: none;
+	outline: none;
+	width: 250px;
+}
+button[type="submit"]{
+	font-size: 20px;
+	margin-top: 5px;
+	background-color: #FF7700;
+	outline: none;
+	border: none;
+	padding: 5px;
+	border-radius: 10px;
+	cursor: pointer;
+}
+span{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 5px;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Rochester' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+    <title>ENCS3320-My Tiny Webserver 25/26</title>
+</head>
+<body>
+	<header>
+		<div class="l">
+			<h1>Go Tiny WebServer</h1>
+		</div>
+		<div class="r">
+			<div class="btns">
+				<button><a href="/register.html">Sign Up</a></button>
+				<button><a href="/login.html">Login</a></button>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<div class="l">
+			<h3 class="tit">Welcome to our course <span>Computer Networks, This is a tiny webserver</span></h3>
+			<div class="box">
+				<h3>Cache-Related terms from RFC 2616 (HTTP/1.1)</h3>
+				<ol>
+					<li><p>Cache<br>A cache is a storage layer (browser, proxy, server) that saves copies of HTTP responses (like HTML, images, CSS). Purpose: reduce load, save bandwidth, and speed up response time by reusing stored responses instead of fetching from the origin server.</p></li>
+					<li><P>Freshness<br>A cached response is fresh if it is still allowed to be served without revalidating.<br>Freshness is controlled by headers like:
+					<ul>
+						<li>Expires: "don't use after this time"</li>
+						<li>Cache-Control: max-age=SECONDS: "this response is fresh for SECONDS"</li>
+					</ul>If the cached response is still within this time window -> it’s fresh.</P></li>
+					<li>Validation / Revalidation<br>
+					When a cached response becomes stale, the cache must check with the origin server
+					before using it again.<br>This check uses validation headers:
+					<ul>
+						<li>ETag: unique ID of the version of a resource</li>
+						<li>If-None-Match: asks "Is this ETag still valid?"</li>
+						<li>Last-Modified</li>
+						<li>If-Modified-Since</li>
+					</ul>If the server replies 304 Not Modified, the cache can reuse the old stored version.</li>
+					<li><p>Stale<br>A stale response is one that is too old to be used directly.<br>It has passed its expiration time (Expires / max-age).<br>A cache must revalidate stale responses unless rules like<br>Cache-Control: must-revalidate change the behavior.</p></li>
+					<li>Cache-Control<br>A powerful HTTP header that controls how caching works.<br>Important directives include:
+					<ul>
+						<li>no-store: do not store under any situation</li>
+						<li>no-cache: store it, but always revalidate before using</li>
+						<li>public: any cache may store</li>
+						<li>private: only browser cache, not shared proxies</li>
+						<li>max-age: number of seconds it stays fresh</li>
+						<li>must-revalidate: cannot use stale responses without rechecking</li>
+					</ul></li>
+				</ol>
+			</div>
+		</div>
+		<div class="r">
+			<div class="mems">
+				<div class="box">
+					<img src="/jtb.jpg">
+					<div class="info">
+						<div class="infh">
+							<h4>Yahya Hasan</h4>
+							<span>(1242481)</span>
+						</div>
+						<p>second-year undergraduate majoring in cybersecurity.</p>
+					</div>
+				</div>
+				<div class="box">
+					<img src="/jtb.jpg">
+					<div class="info">
+						<div class="infh">
+							<h4>Maryan Aqel</h4>
+							<span>(1240761)</span>
+						</div>
+						<p>second-year undergraduate majoring in cybersecurity.</p>
+					</div>
+				</div>
+				<div class="box">
+					<img src="/jtb.jpg">
+					<div class="info">
+						<div class="infh">
+							<h4>Kinda Saadeh</h4>
+							<span>(1242018)</span>
+						</div>
+						<p>second-year undergraduate majoring in cybersecurity.</p>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="box">
+					<div class="boxh">
+						<img src="/Group.png">
+						<h3>Team</h3>
+					</div>
+					<div class="info">
+						<div class="row">
+							<span>Members: <span>Yahya Hasan, Kinda Saadeh, Maryan Aqel</span></span>
+							<br>
+							<span>Projects:-</span>
+							<ol>
+								<li><span>Vehicle Management System: <span>Java (COMP1331)</span></span></li>
+								<li><span>Aid Manager System: <span>Java (COMP2311)</span></span></li>
+								<li><span>Library System: <span>Java (COMP1331)</span></span></li>
+								<li><span>Biometric Authentication System: <span>C++ (CSEC1320)</span></span></li>
+							</ol>
+						</div>
+					</div>
+				</div>
+				<div class="box lnk">
+					<div class="boxh">
+						<img src="/Link.png">
+						<h3>Links</h3>
+					</div>
+					<div class="lnks">
+						<a href="/chat">
+							<img src="/Chatgpt.png">
+						</a>
+						<a href="https://www.w3schools.com/python/python_strings.asp">
+							<img src="/W3Schools.png">
+						</a>
+						<a href="https://www.cloudflare.com/">
+							<img src="/Cloudflare.png">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		fetch("/user").then(res => res.text()).then(res => {
+			if (res.trim() != "") {
+				var btns = document.querySelector(".btns");
+				btns.innerHTML = `<button style="color:black !important"><a href="/logout">Log Out</a></button>`;
+			}
+		})
+	</script>
+</body>
+</html>

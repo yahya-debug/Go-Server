@@ -1,0 +1,22 @@
+:root{
+	--BC: #F4F4EB;
+}
+*{
+  box-sizing: border-box;
+  font-family: 'Roboto';
+	margin: 0;
+}
+body{
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--BC);
+  display: flex;
+  justify-content: center;align-items: center;
+}
+div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}

@@ -1,0 +1,251 @@
+:root{
+	--BC: #F4F4EB;
+}
+*{
+  box-sizing: border-box;
+  font-family: 'Roboto';
+	margin: 0;
+}
+body{
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--BC)
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+header{
+	display: flex;
+	column-gap: 10px;
+	padding: 10px;
+}
+ol, ul{
+	padding-left: 25px;
+}
+header .l{
+	flex-grow: 2;
+}
+header .l h1{
+	font-family: "Rochester";
+	margin: 0;
+	color: #FF7700;
+	user-select: none;
+	font-size: 45px;
+}
+header .r, .btns{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 15px;
+	column-gap: 10px;
+	padding-right: 0;
+}
+header .r button{
+	font-size: 18px;
+	background: none;
+	border-radius: 7px;
+	user-select: none;
+	border: none;
+	padding: 5px 10px;
+	cursor: pointer;
+	border: 2px solid #FF7700;
+	transition: all ease .5s;
+}
+header .r button:first-child{
+	background-color: #FF7700;
+}
+header .r button:last-child{
+	color: #FF7700;
+}
+header .r button:last-child:hover{
+	color: #000;
+	background-color: #FF7700;
+}
+.container{
+	display: flex;
+	height: calc(100vh - 78.4px);
+	min-height: calc(100vh - 78.4px);
+	max-height: calc(100vh - 78.4px);
+	padding: 10px;
+}
+.container h3 span{
+	color: #0074c4;
+}
+.container > div{
+	display: flex;
+	flex-direction: column;
+	padding: 5px;
+	height: 100%;
+	gap: 15px;
+}
+.container .l{
+	max-width: 55%;
+	overflow: hidden;
+}
+.container .box{
+	display: flex;
+	background-color: #fff;
+	padding: 5px;
+	border-radius: 7px;
+	flex-direction: column;
+	word-wrap: normal;
+	overflow: auto;
+	scrollbar-width: thin;
+  scrollbar-color: #adadad #00000000;
+}
+.box li{
+	font-size: 15px;
+}
+.container div::-webkit-scrollbar, .container div::-ms-scrollbar{
+  width: 5px;
+  height: 5px;
+  -webkit-appearance: none;
+}
+.container div::-webkit-scrollbar-thumb, .container div::-ms-scrollbar-thumb{
+  border-radius: 10px;
+  background-color: #adadad82;
+}
+.container .r{
+	width: 45%;
+	overflow: auto;
+	scrollbar-width: thin;
+  scrollbar-color: #adadad #00000000;
+}
+.container .r > div{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.container .r .mems .box{
+	display: flex;
+	flex-direction: row;
+	column-gap: 7.5px;
+	padding: 7.5px;
+	width: 100%;
+}
+.container .box img{
+	width: 75px;
+	height: 75px;
+	border-radius: 8px;
+}
+.mems .box .info{
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	width: 100%;
+}
+.mems .box .infh{
+	display: flex;
+	justify-content: space-between;
+}
+.mems .box .infh span{
+	color: rgb(135, 135, 135);
+}
+.r .box{
+	overflow: hidden;
+}
+.r .box .boxh{
+	display: flex;
+	column-gap: 7.5px;
+	align-items: center;
+}
+.r .box .boxh img{
+	width: 45px !important;
+	height: 45px !important;
+}
+.r .box .info .row{
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.r .box .info .row span{
+	font-weight: bold;
+	font-size: 14px;
+}
+.r .box .info .row span span{
+	font-weight: normal;
+	color: rgb(135, 135, 135);
+	font-size: 13px;
+}
+.r .box.lnk .boxh img{
+	width: 35px !important;
+	height: 35px !important;
+}
+.lnk{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.lnk .lnks{
+	display: flex;
+	column-gap: 13px;
+}
+.lnk .lnks a{
+	background: none;
+	border-radius: 50%;
+	user-select: none;
+	padding: 10px;
+	cursor: pointer;
+	border: 2px solid #FF7700;
+	transition: all ease .5s;	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.lnk .lnks a:hover{
+	background-color: #FF7700;
+}
+.lnk .lnks img{
+	width: 40px !important;
+	height: 40px !important;
+}
+@media only screen and (max-width: 840px) {
+	.container{
+		flex-wrap: wrap;
+		overflow: auto;
+		scrollbar-width: thin;
+  scrollbar-color: #adadad #00000000;
+	}
+	.container .l{
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+	.container .r{
+		width: 100% !important;
+		max-width: 100% !important
+	}
+	header h1{
+		font-size: 37px !important;
+	}
+	header .btns button{
+		font-size: 15px;
+	}
+}
+@media only screen and (max-width: 480px) {
+	header h1{
+		font-size: 30px !important;
+	}
+	.r .box .boxh img{
+		width: 35px !important;
+		height: 35px !important;
+	}
+	.r .box.lnk .boxh img{
+		width: 25px !important;
+		height: 25px !important;
+	}
+	.lnk .lnks img{
+		width: 30px !important;
+		height: 30px !important;
+	}
+	h4, h3{
+		font-size: 16px;
+	}
+	header .btns button{
+		font-size: 13px;
+	}
+	p, li, .r .box .info .row span{
+		font-size: 13px;
+	}
+}
